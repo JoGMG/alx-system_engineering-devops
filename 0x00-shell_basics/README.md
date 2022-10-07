@@ -52,4 +52,5 @@
 - You can assume that all the files we will test with will have at least one letter or one digit
 - The listing should end with a new line
 
-[school.mgc](https://github.com/JoGMG/alx-system_engineering-devops/blob/main/0x00-shell_basics/school.mgc) - Create a magic file school.mgc that can be used with the command file to detect School data files. School data files always contain the string SCHOOL at offset 0.
+[school.mgc](https://github.com/JoGMG/alx-system_engineering-devops/blob/main/0x00-shell_basics/school.mgc) - Create a magic file school.mgc that can be used with the command file to detect School data files. 
+- School data files always contain the string SCHOOL at offset 0.
