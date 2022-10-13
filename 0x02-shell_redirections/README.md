@@ -8,7 +8,7 @@
 [3-twofiles](https://github.com/JoGMG/alx-system_engineering-devops/blob/main/0x02-shell_redirections/3-twofiles) - Display the content of /etc/passwd and /etc/hosts
 
 [4-lastlines](https://github.com/JoGMG/alx-system_engineering-devops/blob/main/0x02-shell_redirections/4-lastlines) - Display the last 10 lines of /etc/passwd
-- Tips: “Thinks of it as a cat, what is at the end of it?”
+- Tips: “Think of it as a cat, what is at the end of it?”
 
 [5-firstlines](https://github.com/JoGMG/alx-system_engineering-devops/blob/main/0x02-shell_redirections/5-firstlines) - Display the first 10 lines of /etc/passwd
 
