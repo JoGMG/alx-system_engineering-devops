@@ -1,1 +1,26 @@
-https://drive.google.com/file/d/1nczH9ifPQ6W_hpSraEeQ-1Kl5y4hcdUU/view?usp=sharing
+https://drive.google.com/file/d/1BmWIY7OE-3GDaePgyslTa8tbZ4epMu41/view?usp=sharing
+
+Q1: For every additional element, why you are adding it?
+Ans: A load balancer distributes network traffic across a number of servers. Therefore, It is added to scale up the infrastructure, distributing incoming traffic across both servers. While an additional Server serves to provide more capacity to be able to handle more incoming traffic.
+
+Q2: What distribution algorithm your load balancer is configured with and how it works?
+Ans: The Predictive distribution algorithm because both servers are of the same capacity and this algorithm distributes network traffic over both servers but does it in a way that it monitors both servers and the improving server receives more traffic than the declining server.
+
+Q3: Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both.
+Ans: My load-balancer uses an Active-Passive setup.
+In an Active-Active setup, the load balancer spreads out the traffic over multiple nodes while in an Active-Passive setup the load balancer recognizes a failed node (the passive) and redirects traffic to the next available node (the active).
+
+Q4: How a database Primary-Replica (Master-Slave) cluster works.
+Ans: The master-slave cluster enables data from the main database server (the master) to be replicated to one or more database servers (the slaves).
+
+Q5: What is the difference between the Primary node and the Replica node in regard to the application?
+Ans: The primary node accepts read and write operations while the replica node only accepts read operations.
+
+Q6: Where are SPOF?
+Ans: The load balancer is a SPOF in this infrastructure.
+
+Q7: Security issues (no firewall, no HTTPS)
+Ans: No firewall to monitor and secure (encrypt) incoming and outgoing network traffic. Also, the connection/communication across the infrastructure to and fro the client is not secure as it doesn't use Hypertext Transfer Protocol Secure (HTTPS).
+
+Q8: No monitoring
+Ans: Web Monitoring measures and collect critical application performance, availabilty and network traffic. So with no monitoring it might be hard to keep track and monitor performance of each servers.

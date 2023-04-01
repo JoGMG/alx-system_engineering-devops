@@ -1,1 +1,32 @@
-https://drive.google.com/file/d/1yIeo5p0x5FNrKj7y8Cik3yxPvfIy_v6N/view?usp=sharing
+https://drive.google.com/file/d/1Rc8_sBENzOaOXBsF215s_kuYhN0TzT-4/view?usp=sharing
+
+Q1: What is a server?
+Ans: A server is a hardware or software device that provides functionality for other programs or devices called clients.
+
+Q2: What is the role of the domain name?
+Ans: A domain name helps with easy identification of internet resources such as computers, networks, and services.
+
+Q3: What type of DNS record www is in www.foobar.com
+Ans: An A record type because it redirects to an IP address.
+
+Q4: What is the role of the web server?
+Ans: The role of the web server is to store, process and deliver requested web pages to client. It does this over HTTP.
+
+Q5: What is the role of the application server?
+Ans: The role of the application server is to serve business logic to application programs through any number of protocols.
+
+Q6: What is the role of the database?
+Ans: The role of the database is for efficient data management.
+
+Q7: What is the server using to communicate with the computer of the user requesting the website?
+Ans: The HyperText Transfer Protocol.
+
+Q8: SPOF
+Ans: Single Point of Failure (SPOF) refers to one fault or malfunction that can cause an entire system to stop operating.
+This infrastructure is a SPOF because all components of the system are needed, the failure of one component of the system would cause the entire system to stop operating.
+
+Q9: Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+Ans: If and when a new code is deployed to the code base, the website would be temperarily down and the web server would need to be restarted.
+
+Q10: Cannot scale if too much incoming traffic
+Ans: This infrastructure cannot scale if there are too much incoming traffic due to limited server capacity and will not be able to handle it.

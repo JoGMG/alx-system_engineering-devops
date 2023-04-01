@@ -1,1 +1,4 @@
-https://drive.google.com/file/d/1O5-4O0XoKr4x1aJ82wZUln3yeXcHWGZX/view?usp=sharing
+https://drive.google.com/file/d/1VxlUPTUNyxdmPZkjBjDe2Akj_XuT68I-/view?usp=sharing
+
+Q1: For every additional element, why you are adding it
+Ans: 1 web server, 1 application server and 1 database all with their own server to scale up and allow for more capacity to handle more traffic and functionalities. 1 load balancer to serve as a fall back so that if one of the load balancers fails the other one takes over.

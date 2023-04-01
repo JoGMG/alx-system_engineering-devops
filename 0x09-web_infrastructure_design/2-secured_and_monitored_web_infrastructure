@@ -1,1 +1,35 @@
-https://drive.google.com/file/d/1gcZCEhaptX7LvuLS9lyL7hx_dG03yCiw/view?usp=sharing
+https://drive.google.com/file/d/11PVlSWWc-7nXxXdRgyK12q9ru1tZ31-f/view?usp=sharing
+
+Q1: For every additional element, why you are adding it.
+    - What are firewalls for?
+    - Why is the traffic served over HTTPS?
+    - What monitoring is used for?
+Ans: 3 Firewalls to secure each servers, 1 SSL certificate (an indication of HTTPS) for secure/encryted server-client and client-server communication and 3 monitoring clients to measure and collect critical information about server performance and network traffic.
+
+Q2: How the monitoring tool is collecting data
+Ans: The monitoring tool tries to protect the server from potential failure. It does this by measuring and collecting information from a monitoring client about a certain number of performance metrics which is then used to determine the overall health and performance of the server.
+There are two types of metrics the monitoring tool measures:
+1. Connection Metrics
+- Request rate: the number of requests the server receives over a given period, which can be used to monitor spikes in network traffic.
+- Response time: how long it takes the server to respond to a request.
+- Response size: the number of data returned with each response.
+- Active connections: the number of requests the server is fulfilling at a given moment.
+2. Host Metrics
+- Uptime: how long the server has been active, which can be used to monitor reboots or outages.
+- CPU Usage: the amount of server capacity used, which can be used to monitor responsiveness.
+- Memory Usage: the amount of ram used by the server, which can be used to monitor slowdowns and prevent server crashes.
+- Cache: the amount of disk space used up by pre-generated responses.
+- Threads: the total count of threads the server uses to respond to requests.
+
+Q3: Explain what to do if you want to monitor your web server QPS
+Ans: Queries Per Second (QPS) is the measure of the amount of traffic a server receives per second.
+To monitor your web server QPS, there are a number of tools available to use like Open source tools such as Nagios, Cacti and Munin and many more. The tool collects information about the server, which it uses to monitor the QPS.
+
+Q4: Why terminating SSL at the load balancer level is an issue.
+Ans: It is an issue because the network traffic will no longer be secured/encrypted.
+
+Q5: Why having only one MySQL server capable of accepting writes is an issue.
+Ans: Because if the master goes down the database will not be able to be written to.
+
+Q6: Why having servers with all the same components (database, web server and application server) might be a problem.
+Ans: Because when a component of the server goes down or is experiencing maintenance the other components are affected too.
