@@ -9,7 +9,7 @@
 #   to authenticate using a password
 
 Host server
-    HostName 54.237.62.39
+    HostName 34.202.159.210
     User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no

@@ -7,4 +7,4 @@
 # - You do not need to handle the case of a private key
 #   protected by a passphrase
 
-ssh -i ~/.ssh/school ubuntu@54.237.62.39
+ssh -i ~/.ssh/school ubuntu@34.202.159.210
