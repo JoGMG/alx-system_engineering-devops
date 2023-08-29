@@ -4,5 +4,6 @@
 # - Must use pkill
 
 exec { 'kill a process':
+  path    => '/bin',
   command => 'pkill killmenow',
 }
