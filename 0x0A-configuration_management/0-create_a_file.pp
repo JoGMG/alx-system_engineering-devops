@@ -6,11 +6,11 @@
 # - File group is www-data
 # - File contains I love Puppet
 
-file { '/tmp/school':
+file { 'create or update file with these configs':
   ensure  => present,
-  path    => '/tmp/school'
+  path    => '/tmp/school',
   mode    => '0744',
   owner   => 'www-data',
-  group   => 'ww-data',
-  content => 'I love Puppet'
+  group   => 'www-data',
+  content => 'I love Puppet',
 }
