@@ -10,7 +10,7 @@ file { 'create or update file with these configs':
   ensure  => present,
   path    => '/tmp/school'
   mode    => '0744',
-  owner   => www-data,
-  group   => ww-data,
+  owner   => 'www-data',
+  group   => 'ww-data',
   content => 'I love Puppet'
 }
