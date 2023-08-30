@@ -11,7 +11,7 @@
 #   configure an Ubuntu machine to respect above requirements
 
 package { 'nginx is installed':
-  ensure => 'installed',
+  ensure => installed,
   name   => 'nginx',
 }
 
@@ -28,7 +28,7 @@ file { 'index file':
 }
 
 service { 'nginx is running':
-  ensure  => 'running',
+  ensure  => running,
   name    => 'nginx',
   require => Package['nginx'],
 }
