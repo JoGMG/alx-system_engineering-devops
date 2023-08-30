@@ -10,15 +10,14 @@
 # - Your answer file should be a Puppet manifest containing commands to automatically
 #   configure an Ubuntu machine to respect above requirements
 
-package { 'nginx is installed':
-  ensure => installed,
-  name   => 'nginx',
+package { 'nginx':
+  ensure => 'installed',
 }
 
 file_line { 'nginx server config':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
+  after  => 'server_name _;',
   line   => 'return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;',
 }
 
@@ -27,8 +26,7 @@ file { 'index file':
   content => 'Hello World!',
 }
 
-service { 'nginx is running':
-  ensure  => running,
-  name    => 'nginx',
-  require => Package['nginx'],
+service { 'nginx is up and running':
+  ensure => 'running',
+  name   => 'nginx',
 }
