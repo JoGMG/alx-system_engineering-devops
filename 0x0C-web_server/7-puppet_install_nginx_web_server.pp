@@ -28,6 +28,7 @@ file { 'index file':
 }
 
 service { 'nginx is running':
-  ensure => 'running',
-  name   => 'nginx',
+  ensure  => 'running',
+  name    => 'nginx',
+  require => Package['nginx'],
 }
