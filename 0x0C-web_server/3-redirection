@@ -22,7 +22,7 @@ printf %s "server {
     index index.html;
 
     server_name _;
-    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4$request_uri;
+    rewrite ^ http://google.com permanent;
 
 }" > /etc/nginx/sites-available/default
 
