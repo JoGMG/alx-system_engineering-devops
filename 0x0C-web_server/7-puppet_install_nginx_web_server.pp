@@ -18,15 +18,13 @@ file_line { 'nginx server config':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'server_name _;',
-  line   => 'return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-file { 'index file':
-  path    => '/var/www/html/index.html',
+file { '/var/www/html/index.html':
   content => 'Hello World!',
 }
 
-service { 'nginx is up and running':
-  ensure => 'running',
-  name   => 'nginx',
+service { 'nginx':
+  ensure  => 'running',
 }
