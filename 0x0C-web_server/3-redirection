@@ -24,9 +24,6 @@ printf %s "server {
     server_name _;
     return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4$request_uri;
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
 }" > /etc/nginx/sites-available/default
 
 sudo service nginx restart
