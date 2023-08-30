@@ -22,7 +22,7 @@ printf %s "server {
     index index.html index.htm index.nginx-debian.html;
 
     server_name _;
-    rewrite ^ http://google.com permanent;
+    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
 
     location / {
         try_files \$uri \$uri/ =404;
