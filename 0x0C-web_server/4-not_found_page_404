@@ -7,15 +7,12 @@
 # - Using what you did with `3-redirection`, write `4-not_found_page_404`
 #   so that it configures a brand new Ubuntu machine to the requirements
 #   asked in this task
+sudo -i
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-
-mkdir -p /var/www/html
-touch /var/www/html/index.html
 echo 'Hello World!' > /var/www/html/index.html
-touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 printf %s "server {
     listen 80;
@@ -37,4 +34,4 @@ printf %s "server {
     }
 }" > /etc/nginx/sites-available/default
 
-sudo service nginx restart
+service nginx restart
