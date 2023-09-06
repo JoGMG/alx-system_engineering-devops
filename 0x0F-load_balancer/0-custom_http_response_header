@@ -5,6 +5,7 @@ sudo -i
 apt-get -y update
 apt-get -y install nginx
 
+mkdir -p /var/www/html
 echo 'Hello World!' > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 printf %s "server {
