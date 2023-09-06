@@ -6,13 +6,11 @@
 #   a Ubuntu machine to respect above requirements
 # - Using what you did with `1-install_nginx_web_server`, write `3-redirection`
 #   so that it configures a brand new Ubuntu machine to the requirements asked in this task
+sudo -i
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-
-mkdir -p /var/www/html
-touch /var/www/html/index.html
 echo 'Hello World!' > /var/www/html/index.html
 printf %s "server {
     listen 80;
@@ -30,4 +28,4 @@ printf %s "server {
 
 }" > /etc/nginx/sites-available/default
 
-sudo service nginx restart
+service nginx restart
