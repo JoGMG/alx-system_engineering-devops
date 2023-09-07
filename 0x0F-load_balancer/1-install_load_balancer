@@ -5,10 +5,10 @@
 # - Make sure that HAproxy can be managed via an init script.
 
 sudo -i
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.8
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get update
-apt-get install haproxy=2.8.\*
+apt-get install -y haproxy=1.8.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 cp /etc/haproxy/haproxy.cfg{,.original}
