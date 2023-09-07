@@ -1,22 +1,18 @@
 # Install an Nginx server with custom HTTP header
 
-package { 'nginx':
-  ensure => 'present',
+exec {'update':
+  provider => shell,
+  command  => 'sudo apt-get -y update',
+  before   => Exec['install Nginx'],
 }
 
-# exec {'update':
-#   provider => shell,
-#   command  => 'sudo apt-get -y update',
-#   before   => Exec['install Nginx'],
-# }
+exec {'install Nginx':
+  provider => shell,
+  command  => 'sudo apt-get -y install nginx',
+  before   => file_line['custom header'],
+}
 
-# exec {'install Nginx':
-#   provider => shell,
-#   command  => 'sudo apt-get -y install nginx',
-#   before   => Exec['add_header'],
-# }
-
-file_line { 'add custom header':
+file_line { 'custom header':
   ensure      => 'present',
   path        => '/etc/nginx/sites-available/default',
   provider    => shell,
@@ -24,6 +20,7 @@ file_line { 'add custom header':
   after       => 'server {',
   line        => '\n\tadd_header X-Served-By "$var";',
 }
+
 # exec { 'add_header':
 #   provider    => shell,
 #   environment => ["HOST=${hostname}"],
