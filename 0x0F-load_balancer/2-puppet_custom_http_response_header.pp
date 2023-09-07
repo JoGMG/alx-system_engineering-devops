@@ -19,6 +19,7 @@ package { 'nginx':
 file_line { 'add custom header':
   ensure      => 'present',
   path        => '/etc/nginx/sites-available/default',
+  provider    => shell,
   environment => ["var=${hostname}"],
   after       => 'server {',
   line        => '\n\tadd_header X-Served-By "$var";',
