@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that displays information about the subdomains of a domain
+
+if [ "$#" -lt 1 ]
+then
+    echo "Domain name is missing"
+elif [ "$#" -eq 1 ]
+then
+    sub_domains=("www" "lb-01" "web-01" "web-02")
+    for i in "${sub_domains[@]}"
+    do
+        dig "$i"."$1" | grep -A1 'ANSWER SECTION:' \
+        | awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$i"
+    done
+else
+    dig "$2"."$1" | grep -A1 'ANSWER SECTION:' \
+    | awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$2"
+fi
