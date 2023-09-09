@@ -3,7 +3,6 @@
 # - Configure HAproxy so that it send traffic to web-01 and web-02.
 # - Distribute requests using a roundrobin algorithm.
 # - Make sure that HAproxy can be managed via an init script.
-
 sudo -i
 apt-get -y install --no-install-recommends software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.8
