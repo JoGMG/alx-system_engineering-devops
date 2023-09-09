@@ -32,16 +32,19 @@ defaults
         errorfile 502 /etc/haproxy/errors/502.http
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
+
 frontend www
         bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/www.jogmg.tech.pem
         http-request redirect scheme https unless { ssl_fc }
         default_backend webservers
+
 backend webservers
         balance roundrobin
         server 181417-web-01 34.202.159.210:80 check
         server 181417-web-02 54.90.4.252:80 check
-listen hbnb
+
+listen lb-01
     bind *:80
     mode http
     balance roundrobin
