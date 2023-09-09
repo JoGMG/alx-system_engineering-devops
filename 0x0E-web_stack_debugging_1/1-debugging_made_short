@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Task 0 made short.
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx start
+service nginx restart
 service nginx stop
