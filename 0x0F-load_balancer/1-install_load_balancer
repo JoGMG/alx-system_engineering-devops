@@ -3,10 +3,12 @@
 # - Configure HAproxy so that it send traffic to web-01 and web-02.
 # - Distribute requests using a roundrobin algorithm.
 # - Make sure that HAproxy can be managed via an init script.
+# - Install the latest HAProxy package: https://intranet.alxswe.com/rltoken/2VRAgtKKR9g6Xfb0xzGiSg
 sudo -i
-apt-get -y install --no-install-recommends software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.8
-apt-get install haproxy=2.8.\*
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+apt-get install -y haproxy=1.8.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 cp /etc/haproxy/haproxy.cfg{,.original}
