@@ -4,7 +4,6 @@
 # - Distribute requests using a roundrobin algorithm.
 # - Make sure that HAproxy can be managed via an init script.
 # - Install the latest HAProxy package: https://intranet.alxswe.com/rltoken/2VRAgtKKR9g6Xfb0xzGiSg
-sudo -i
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get -y update
