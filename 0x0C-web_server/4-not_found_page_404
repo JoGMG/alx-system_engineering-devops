@@ -7,7 +7,6 @@
 # - Using what you did with `3-redirection`, write `4-not_found_page_404`
 #   so that it configures a brand new Ubuntu machine to the requirements
 #   asked in this task
-sudo -i
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
