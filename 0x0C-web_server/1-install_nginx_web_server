@@ -11,7 +11,6 @@
 #   a new Ubuntu machine to respect above requirements
 #   (this script will be run on the server itself)
 # - You can’t use `systemctl` for restarting `nginx`
-sudo -i
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
