@@ -3,4 +3,5 @@
 chmod 644 /etc/nginx/nginx.conf
 sed -Ei 's/^user\s.*/user nginx;/' /etc/nginx/nginx.conf
 sed -Ei '/^[^#].*listen (\[::\]:)?80/ s/80/8080/' /etc/nginx/sites-enabled/default
+pkill apache2
 su nginx -s /bin/bash -c 'service nginx restart'
