@@ -3,5 +3,5 @@
 
 if [ "$#" -eq 2 ]; then
     mysqldump -u root -p "$1" --all-databases > backup.sql
-    tar -cvzf "$(date "+%d-%m-%Y").tar.gz" backup.sql
+    tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
 fi
