@@ -17,6 +17,7 @@ def add_title(hot_list, hotposts_data):
     hotposts_data.pop(0)
     add_title(hot_list, hotposts_data)
 
+
 def recurse(subreddit, hot_list=[], after=None):
     """ Get Reddit API JSON request """
 

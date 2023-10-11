@@ -10,11 +10,15 @@ def top_ten(subreddit):
     """ Get Reddit API JSON request """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    header = {'User-Agent': 'Mozilla/5.0'}
     param = {'limit': 10}
-    response = requests.get(url, allow_redirects=False, params=param)
+    response = requests.get(url,
+                            headers=header,
+                            allow_redirects=False,
+                            params=param)
 
-    response_data = response.json()
     if response.status_code == 200:
+        response_data = response.json()
         hotposts_data = response_data['data']['children']
         if len(hotposts_data) == 0:
             print(None)
