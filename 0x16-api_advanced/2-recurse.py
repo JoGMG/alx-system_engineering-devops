@@ -8,16 +8,16 @@ return None.
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None, count=0):
+def recurse(subreddit, hot_list=[], after=""):
     """ Get Reddit API JSON request """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     header = {'User-Agent': 'Mozilla/5.0'}
-    params = {'after': after}
+    param = {'after': after}
     response = requests.get(url,
                             headers=header,
                             allow_redirects=False,
-                            params=params)
+                            params=param)
 
     if response.status_code == 200:
         response_data = response.json()
@@ -25,9 +25,8 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
         for items in hotposts_data:
             hot_list.append(items['data']['title'])
         after = response_data['data']['after']
-        # count += response_data['data']['dist']
         if not after:
             return hot_list
-        return recurse(subreddit, hot_list, after, count)
+        return recurse(subreddit, hot_list, after)
     else:
         return None
