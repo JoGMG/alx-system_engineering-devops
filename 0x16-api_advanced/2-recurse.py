@@ -24,7 +24,7 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
         response_data = response.json()
         hotposts_data = response_data['data']['children']
         after = response_data['data']['after']
-        count = response_data['data']['dist']
+        count += response_data['data']['dist']
         for items in hotposts_data:
             hot_list.append(items['data']['title'])
         if not after:
