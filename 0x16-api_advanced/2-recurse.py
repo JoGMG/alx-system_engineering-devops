@@ -8,34 +8,27 @@ return None.
 import requests
 
 
-def add_title(hot_list, hotposts_data):
-    """ Adds title from hotposts_data to hot_list """
-    if len(hotposts_data) == 0:
-        return
-
-    hot_list.append(hotposts_data[0]['data']['title'])
-    hotposts_data.pop(0)
-    add_title(hot_list, hotposts_data)
-
-
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[], after=None, count=0):
     """ Get Reddit API JSON request """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     header = {'User-Agent': 'Mozilla/5.0'}
-    param = {'after': after}
+    params = {'after': after,
+              'count': count}
     response = requests.get(url,
                             headers=header,
                             allow_redirects=False,
-                            params=param)
+                            params=params)
 
     if response.status_code == 200:
         response_data = response.json()
         hotposts_data = response_data['data']['children']
-        add_title(hot_list, hotposts_data)
         after = response_data['data']['after']
+        count = response_data['data']['dist']
+        for items in hotposts_data:
+            hot_list.append(items['data']['title'])
         if not after:
             return hot_list
-        return recurse(subreddit, hot_list=hot_list, after=after)
+        return recurse(subreddit, hot_list, after, count)
     else:
         return None
