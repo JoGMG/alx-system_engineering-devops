@@ -8,8 +8,15 @@ return None.
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=""):
-    """ Get Reddit API JSON request """
+def recurse(subreddit, hot_list=[], after=None):
+    """
+    Returns a list containing the titles of all hot posts of a given subreddit.
+
+    Arguments:
+    -   subreddit: The subreddit to search in.
+    -   hot_list: The list to append the titles of all hot posts.
+    -   after: The listing parameter to go to the next page.
+    """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     header = {'User-Agent': 'Mozilla/5.0'}
@@ -25,7 +32,7 @@ def recurse(subreddit, hot_list=[], after=""):
         for items in hotposts_data:
             hot_list.append(items['data']['title'])
         after = response_data['data']['after']
-        if not after:
+        if after is None:
             return hot_list
         return recurse(subreddit, hot_list, after)
     else:
