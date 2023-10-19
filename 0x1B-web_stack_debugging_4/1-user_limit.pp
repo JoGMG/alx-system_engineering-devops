@@ -1,6 +1,12 @@
 # Increase the file descriptor limit for a user.
 
-exec { 'Increase User Soft Limit':
-    provider => shell,
-    command  => 'sed -Ei '/holberton\s*(hard|soft)/s/\d+/5000/' /etc/security/limits.conf',
+exec {'replace-1':
+  provider => shell,
+  command  => 'sudo sed -i "s/nofile 5/nofile 50000/" /etc/security/limits.conf',
+  before   => Exec['replace-2'],
+}
+
+exec {'replace-2':
+  provider => shell,
+  command  => 'sudo sed -i "s/nofile 4/nofile 40000/" /etc/security/limits.conf',
 }
