@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully reloads gunicorn instance.
 
-pid=$(sudo systemctl show -p MainPID --value gunicorn)
-sudo kill -HUP "$pid"
+sudo systemctl show -p MainPID --value gunicorn | xargs kill -HUP
