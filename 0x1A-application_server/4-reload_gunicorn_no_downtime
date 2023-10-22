@@ -2,5 +2,4 @@
 # Gracefully reloads gunicorn instance.
 
 pid=$(sudo systemctl show -p MainPID --value gunicorn)
-echo "Sending HUP signal to PID: $pid"
 sudo kill -HUP "$pid"
