@@ -3,4 +3,4 @@
 
 pid=$(sudo systemctl show -p MainPID --value gunicorn)
 echo "Sending HUP signal to PID: $pid"
-kill -HUP "$pid"
+sudo kill -HUP "$pid"
