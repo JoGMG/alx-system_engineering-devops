@@ -2,5 +2,5 @@
 # Gracefully reloads gunicorn instance.
 
 pid=$(systemctl status gunicorn | grepq -oE 'Main PID: [0-9]+' | cut -d ' ' -f3)
-echo "Sending HUP signal to PID: $pid"
 kill -HUP "$pid"
+echo 'OK'
